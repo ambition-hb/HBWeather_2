@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="HBWeather"/>
+
+    <version value="1"/>
+
+    <list>
+        <mapping class="com.hbweather_2.android.db.Province"/>
+        <mapping class="com.hbweather_2.android.db.City"/>
+        <mapping class="com.hbweather_2.android.db.County"/>
+    </list>
+
+</litepal>
