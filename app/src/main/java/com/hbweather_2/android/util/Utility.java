@@ -2,9 +2,11 @@ package com.hbweather_2.android.util;
 
 import android.text.TextUtils;
 
+import com.google.gson.Gson;
 import com.hbweather_2.android.db.City;
 import com.hbweather_2.android.db.County;
 import com.hbweather_2.android.db.Province;
+import com.hbweather_2.android.gson.Weather;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -90,5 +92,22 @@ public class Utility {
             }
         }
         return false;
+    }
+
+    /**
+     * 将返回的JSON数据解析成Weather实体类
+     * @param response
+     * @return
+     */
+    public static Weather handleWeatherResponse(String response){
+        try{
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather6");//JSON数据头
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent, Weather.class);//由于已经按照解析的数据格式定义了相应的GSON实体类，通过fromJson()方法就能直接将JSON数据转换成Weather对象了
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }
