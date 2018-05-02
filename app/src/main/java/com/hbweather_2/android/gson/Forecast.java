@@ -11,7 +11,7 @@ public class Forecast {
     public String date;//预报日期
 
     @SerializedName("cond_code_d")
-    public String cond;//天气状况
+    public String cond;//天气状况代码
 
     public String tmp_max;//当日最高温度
 
