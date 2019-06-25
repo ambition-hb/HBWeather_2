@@ -129,7 +129,7 @@ public class WeatherActivity extends AppCompatActivity {
      */
     public void requestWeather(final String weatherId){
         //https://free-api.heweather.com/s6/weather?location=CN101010100&key=8518f3bef50144e39994370699b08d5e
-        String weatherUrl = "https://free-api.heweather.com/s6/weather?location=" + weatherId + "&key=8518f3bef50144e39994370699b08d5e";
+        String weatherUrl = "https://free-api.heweather.net/s6/weather?location=" + weatherId + "&key=c5d781e1c8ac422987f33e0eb79adad5";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
